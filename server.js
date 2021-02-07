@@ -1,5 +1,9 @@
 var express = require("express");
+<<<<<<< HEAD
 
+=======
+var db = require("./models");
+>>>>>>> upstream/main
 var PORT = process.env.PORT || 8080;
 
 var app = express();
@@ -17,12 +21,24 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Import routes and give the server access to them.
+<<<<<<< HEAD
 var routes = require("./controllers/books_controller.js");
 app.use(routes);
 
+=======
+//var routes = require("./controllers/books-controller.js");
+//app.use(routes);
+
+db.sequelize.sync().then(() => {
+>>>>>>> upstream/main
 // Start server so that it can begin listening to request
 app.listen(PORT, function() {
 
     // Log (server-side) when our server has started
     console.log("Server listening on: http://localhost:" + PORT);
+<<<<<<< HEAD
   }); 
+=======
+  }); 
+});
+>>>>>>> upstream/main

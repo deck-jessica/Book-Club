@@ -2,6 +2,7 @@ CREATE DATABASE books_db;
 
 USE books_db;
 
+<<<<<<< HEAD
 CREATE TABLE books
 (
   title VARCHAR(255) NOT NULL,
@@ -20,3 +21,5 @@ CREATE TABLE readers
     passwords VARCHAR(255) NOT NULL,
     PRIMARY KEY (id)
 );
+=======
+>>>>>>> upstream/main
