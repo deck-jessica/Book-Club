@@ -1,0 +1,38 @@
+<h1>Book Club</h1>
+
+<h2>Your Wishlist</h2>
+
+<ul>
+  {{#each books}}
+    {{#unless haveRead}}
+      {{> books/book-block haveRead=true}}
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>Books you have Read!</h2>
+
+<ul>
+  {{#each books}}
+    {{#if haveRead}}
+      {{> books/book-block haveRead=false}}
+    {{/if}}
+  {{/each}}
+</ul>
+
+<h2>Add a Book to your Wishlist</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="bo">Book Title:</label>
+    <input type="text" id="bo" name="title">
+  </div>
+
+  <div class="form-group">
+    <label for="au">Author:</label>
+    <input type="text" id="au" name="author">
+  </div>
+  
+
+  <button type="submit">Add Book</button>
+</form>
