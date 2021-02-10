@@ -17,8 +17,14 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Import routes and give the server access to them.
-//var routes = require("./controllers/books-controller.js");
-//app.use(routes);
+var bookApiRoutes = require("./routes/book-api-routes.js");
+bookApiRoutes (app)
+
+var htmlRoutes = require("./routes/html-routes.js");
+htmlRoutes (app)
+
+var readerApiRoutes = require("./routes/reader-api-routes.js");
+readerApiRoutes (app)
 
 db.sequelize.sync().then(() => {
 // Start server so that it can begin listening to request
