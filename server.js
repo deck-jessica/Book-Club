@@ -2,6 +2,8 @@ var express = require("express");
 var db = require("./models");
 var PORT = process.env.PORT || 8080;
 
+require('dotenv').config();
+
 var app = express();
 
 // Serve static content for the app from the "public" directory
