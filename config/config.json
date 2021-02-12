@@ -1,23 +1,17 @@
 {
   "development": {
-    "username": "root",
-    "password": "process.env.DB_PASS",
-    "database": "books_db",
-    "host": "127.0.0.1",
+    "use_env_variable": "LOCAL_HOST",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "process.env.DB_PASS",
+    "password": "process.env",
     "database": "database_test",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": "process.env.DB_PASS",
-    "database": "database_production",
-    "host": "127.0.0.1",
+    "use_env_variable": "LOCAL_HOST",
     "dialect": "mysql"
   }
 }
