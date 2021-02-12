@@ -1,6 +1,8 @@
 require('dotenv').config();
 
+
 // Requiring npm packages
+
 var express = require("express");
 var session = require("express-session");
 
@@ -11,7 +13,9 @@ const passport = require("./config/passport");
 var db = require("./models");
 var PORT = process.env.PORT || 8080;
 
+
 // Creating express app and configuring middleware needed for authentication
+
 var app = express();
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
@@ -29,13 +33,13 @@ app.set("view engine", "handlebars");
 
 // Import routes and give the server access to them.
 var bookApiRoutes = require("./routes/book-api-routes.js");
-bookApiRoutes (app)
+bookApiRoutes (app);
 
 var htmlRoutes = require("./routes/html-routes.js");
-htmlRoutes (app)
+htmlRoutes (app);
 
 var readerApiRoutes = require("./routes/reader-api-routes.js");
-readerApiRoutes (app)
+readerApiRoutes (app);
 
 db.sequelize.sync().then(() => {
 // Start server so that it can begin listening to request
