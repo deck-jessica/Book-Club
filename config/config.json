@@ -1,9 +1,6 @@
 {
   "development": {
-    "username": "root",
-    "password": "process.env.DB_PASS",
-    "database": "books_db",
-    "host": "127.0.0.1",
+    "use_env_variable": "LOCAL_HOST",
     "dialect": "mysql"
   },
   "test": {
@@ -14,10 +11,7 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": "process.env.DB_PASS",
-    "database": "database_production",
-    "host": "127.0.0.1",
+    "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql"
   }
 }
