@@ -6,6 +6,7 @@
 // =============================================================
 var path = require("path");
 const isAuthenticated = require("../config/middleware/isAuthenticated");
+var db = require("../models");
 
 // Routes
 // =============================================================
@@ -42,7 +43,9 @@ module.exports = function(app) {
 
   // authors route loads author-manager.html
   app.get("/book-manager", isAuthenticated, function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/book-manager.html"));
+    db.Book.findAll({}).then(function (dbBook) {
+      res.render("index", {books: dbBook});
+    });
   });
 
 };
