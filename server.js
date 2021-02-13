@@ -40,7 +40,7 @@ htmlRoutes (app);
 var readerApiRoutes = require("./routes/reader-api-routes.js");
 readerApiRoutes (app);
 
-db.sequelize.sync({force: true}).then(() => {
+db.sequelize.sync().then(() => {
 // Start server so that it can begin listening to request
 app.listen(PORT, function() {
     // Log (server-side) when our server has started
