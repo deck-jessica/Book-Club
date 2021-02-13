@@ -5,6 +5,7 @@
 // Dependencies
 // =============================================================
 var path = require("path");
+const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 // Routes
 // =============================================================
@@ -14,7 +15,10 @@ module.exports = function(app) {
 
   // index route loads view.html
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/book-manager.html"));
+    if (req.user) {
+      res.redirect("/book-manager");
+    }
+    res.sendFile(path.join(__dirname, "../public/signup.html"));
   });
 
   // cms route loads cms.html
@@ -27,9 +31,18 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/blog.html"));
   });
 
+  // login route loads the login page unless already signed up
+  app.get("/login", (req, res) => {
+    // If the user already has an account send them to the members page
+    if (req.user) {
+      res.redirect("/book-manager");
+    }
+    res.sendFile(path.join(__dirname, "../public/login.html"));
+  });
+
   // authors route loads author-manager.html
-  app.get("/authors", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/author-manager.html"));
+  app.get("/book-manager", isAuthenticated, function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/book-manager.html"));
   });
 
 };
