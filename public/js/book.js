@@ -26,29 +26,32 @@ $(document).ready(function() {
 
   // A function for adding a book. Calls getBooks upon completion
   function upsertBook(bookData) {
+    console.log(bookData),
     $.post("/api/new", bookData)
       .then(getBooks);
   }
 
   // Function for creating a new list row for books
   function createBooksRow(bookData) {
+    console.log(bookData)
     var newTr = $("<tr>");
     newTr.data("title", bookData);
-    newTr.append("<td>" + bookData.name + "</td>");
-    if (bookData.Posts) {
-      newTr.append("<td> " + bookData.Posts.length + "</td>");
-    } else {
-      newTr.append("<td>0</td>");
-    }
-    newTr.append("<td><a href='/blog?author_id=" + bookData.id + "'>Go to Posts</a></td>");
-    newTr.append("<td><a href='/cms?author_id=" + bookData.id + "'>Create a Post</a></td>");
-    newTr.append("<td><a style='cursor:pointer;color:red' class='delete-author'>Delete Author</a></td>");
+    newTr.append("<td>" + bookData.title + "</td>");
+    newTr.append("<td>" + bookData.author + "</td>");
+    // if (bookData.Posts) {
+    //   newTr.append("<td> " + bookData.Posts.length + "</td>");
+    // } else {
+    //   newTr.append("<td>0</td>");
+    // }
+    //newTr.append("<td><a href='/blog?author_id=" + bookData.id + "'>Go to Books</a></td>");
+    //newTr.append("<td><a href='/cms?author_id=" + bookData.id + "'>Add a Book</a></td>");
     return newTr;
   }
 
   // Function for retrieving books and getting them ready to be rendered to the page
   function getBooks() {
-    $.get("/api/books", function(data) {
+    $.get("/api/books").then(function(data) {
+      console.log("")
       var rowsToAdd = [];
       for (var i = 0; i < data.length; i++) {
         rowsToAdd.push(createBooksRow(data[i]));
@@ -60,7 +63,8 @@ $(document).ready(function() {
 
   // A function for rendering the list of books to the page
   function renderBookList(rows) {
-    bookList.children().not(":title").remove();
+    console.log(rows)
+    bookList.children().not("#form-row").remove();
     bookContainer.children(".alert").remove();
     if (rows.length) {
       console.log(rows);

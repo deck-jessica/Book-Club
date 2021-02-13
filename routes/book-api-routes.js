@@ -1,6 +1,21 @@
 var db = require("../models");
-
+var Book = require("../models/book.js")
 module.exports = function (app) {
+
+
+ // Add a book 
+ app.post("/api/new", function (req, res) {
+  console.log("Book Data:");
+  console.log(req.body);
+  db.Book.create({
+    title: req.body.title,
+    author: req.body.author,
+    //author: req.body.author,
+    //haveRead: req.body.haveRead
+  }).then(function (results) {
+    res.json(results);
+  });
+});
 
   // get all books from the db 
   app.get("/api/books", function (req, res) {
@@ -23,17 +38,6 @@ module.exports = function (app) {
 
   });
 
-  // Add a book 
-  app.post("/api/new", function (req, res) {
-    console.log("Book Data:");
-    console.log(req.body);
-    Book.create({
-      title: req.body.title,
-      author: req.body.author,
-      haveRead: req.body.haveRead
-    }).then(function (results) {
-      res.json(results);
-    });
-  });
+ 
 
 }; 
