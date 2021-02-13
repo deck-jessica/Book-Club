@@ -1,5 +1,5 @@
 var db = require("../models");
-
+var Book = require("../models/book.js")
 module.exports = function (app) {
 
 
@@ -7,22 +7,15 @@ module.exports = function (app) {
  app.post("/api/new", function (req, res) {
   console.log("Book Data:");
   console.log(req.body);
-  Book.create({
+  db.Book.create({
     title: req.body.title,
     author: req.body.author,
-    haveRead: req.body.haveRead
+    //author: req.body.author,
+    //haveRead: req.body.haveRead
   }).then(function (results) {
     res.json(results);
   });
 });
-
-
-app.post("/api/books", function(req, res) {
-  db.Book.create(req.body).then(function(dbAuthor) {
-    res.json(dbAuthor);
-  });
-});
-
 
   // get all books from the db 
   app.get("/api/books", function (req, res) {
