@@ -4,7 +4,7 @@ require('dotenv').config();
 // Requiring npm packages
 
 var express = require("express");
-//var session = require("express-session");
+var session = require("express-session");
 
 // Requiring passport as configured
 const passport = require("./config/passport");
@@ -40,7 +40,7 @@ htmlRoutes (app);
 var readerApiRoutes = require("./routes/reader-api-routes.js");
 readerApiRoutes (app);
 
-db.sequelize.sync().then(() => {
+db.sequelize.sync({force: true}).then(() => {
 // Start server so that it can begin listening to request
 app.listen(PORT, function() {
     // Log (server-side) when our server has started
