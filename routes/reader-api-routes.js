@@ -82,8 +82,8 @@ module.exports = function(app) {
   app.post("/api/login", passport.authenticate("local"), (req, res) => {
     // Sending back a password, even a hashed password, isn't a good idea
     res.json({
-      username: req.reader.username,
-      id: req.reader.id
+      username: req.user.username,
+      id: req.user.id
     });
   });
 
@@ -111,15 +111,15 @@ module.exports = function(app) {
 
     // Route for getting some data about our user to be used client side
   app.get("/api/reader_data", (req, res) => {
-    if (!req.reader) {
+    if (!req.user) {
       // The user is not logged in, send back an empty object
       res.json({});
     } else {
       // Otherwise send back the user's username and id
       // Sending back a password, even a hashed password, isn't a good idea
       res.json({
-        username: req.reader.username,
-        id: req.reader.id
+        username: req.user.username,
+        id: req.user.id
       });
     }
   });
