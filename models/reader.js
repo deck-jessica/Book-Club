@@ -37,5 +37,11 @@ module.exports = function(sequelize, DataTypes) {
       null
     );
   });
+
+  Reader.associate = function(models){
+    Reader.hasMany(models.Book, {
+      onDelete: "cascade"
+    });
+  }
   return Reader;
 };

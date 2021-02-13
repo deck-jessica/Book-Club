@@ -4,5 +4,13 @@ module.exports = (sequelize, DataType) => {
         author: DataType.STRING, 
         //haveRead: DataType.BOOLEAN
     });
+
+    Book.associate = function(models) {
+        Book.belongsTo(models.Reader, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
+    };
     return Book;
 }
