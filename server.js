@@ -7,7 +7,7 @@ var express = require("express");
 //var session = require("express-session");
 
 // Requiring passport as configured
-// const passport = require("./config/passport");
+const passport = require("./config/passport");
 
 // Setting up port and requiring the models for syncing
 var db = require("./models");
@@ -19,11 +19,11 @@ var app = express();
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// app.use(
-//   session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
-// );
-// app.use(passport.initialize());
-// app.use(passport.session());
+app.use(
+  session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
+);
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Set Handlebars.
 var exphbs = require("express-handlebars");
