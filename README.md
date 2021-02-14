@@ -10,6 +10,11 @@ Tools used:
 1. Passport
 2. Sequilize
 3. Mysql
-4. Handlebars
+4. Handlebars.js
 5. Express
-6. Handlebars
+6. Node.js
+7. JavaScript
+8. HTML
+9. CSS
+
+![Book-Club-Screenshot](insert screenshot path here)
