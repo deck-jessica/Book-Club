@@ -1,5 +1,6 @@
 
 	<div class="container">
+
 		<div class="row mt-4">
             <div class="col-md-2 col-sm-2">
                <a class="btn btn-light" href="/blog">Go to Reader</a>
@@ -11,40 +12,57 @@
 			<a class="btn btn-light" href="/logout">logout</a>
 		 </div>
         </div>
-		<h2>Your Wishlist</h2>
 
-<ul>
-  {{#each books}}
-    {{#unless haveRead}}
-      {{> books/book-block haveRead=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>Books you have Read!</h2>
-
-<ul>
-  {{#each books}}
-    {{#if haveRead}}
-      {{> books/book-block haveRead=false}}
-    {{/if}}
-  {{/each}}
-</ul>
-
+<div class="newBook-form">
 <h2>Add a Book to your Wishlist</h2>
-<form class="create-form">
+<form class="newBook-form">
 
   <div class="form-group">
     <label for="bo">Book Title:</label>
-    <input type="text" id="bo" name="title">
+    <input type="text" id="bo" name="title" placeholder="Enter the title">
   </div>
 
   <div class="form-group">
     <label for="au">Author:</label>
-    <input type="text" id="au" name="author">
+    <input type="text" id="au" name="author" placeholder="Author">
   </div>
   
 
-  <button type="submit">Add Book</button>
+  <button class="newBookbtn" type="submit">Add Book</button>
 </form>
+</div>
+
+<div class="container-list">
+  <div>
+    <div>        
+		<h2>Your Wishlist</h2>
+  <div>
+<ul>
+  {{#each books}}
+    {{#unless haveRead}}
+    <p class="wish-it">
+      <button id="read-book" class="read-book" data-id="{{this.id}}">I've Read It!</button>
+      </p>
+    {{/unless}}
+  {{/each}}
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div class="container-list">
+<h2>Books you have Read!</h2>
+<div>
+<ul>
+  {{#each books}}
+    {{#if haveRead}}
+      <p id="boo">
+        {{book}} </p>
+    {{/if}}
+  {{/each}}
+</ul>
+</div>
+</div>
+
 	</div>
