@@ -8,7 +8,7 @@ module.exports = function (app) {
   console.log("Book Data:");
   console.log(req.body);
   db.Book.create({
-    title: req.body.title,
+    title: req.body.name,
     author: req.body.author,
     //author: req.body.author,
     //haveRead: req.body.haveRead
@@ -26,18 +26,17 @@ module.exports = function (app) {
 
 
   // find one book using title in req.params.title  
-  app.get("/api/books/:title", function (req, res) {
-    db.Book.findOne({
-      where: {
-        title: req.params.title
-      }
+//    app.get("/api/books/:title", function (req, res) {
+//      db.Book.findOne({
+//        where: {
+//          title: req.params.title
+//        }
 
-    }).then(function (dbBook) {
-      res.json(dbBook);
-    });
+//      }).then(function (dbBook) {
+//        res.json(dbBook);
+//      });
 
-  });
+//  });
 
  
-
-}; 
+ };
