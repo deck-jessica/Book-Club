@@ -29,18 +29,22 @@ Book Club is an app that uses MySql to store users along with a list of books ch
 
 Tools used:
 
-1. Passport
-2. Sequelize
-3. Mysql
-4. Handlebars.js
-5. Express
-6. Node.js
-7. JavaScript
-8. HTML
-9. CSS
+*1. Passport
+*2. Sequelize
+*3. Mysql
+*4. Handlebars.js
+*5. Express
+*6. Node.js
+*7. JavaScript
+*8. HTML
+*9. CSS
 
 ![Book-Club-Screenshot](./public/img/screen-book-club.png)
 
 ## Contributors
 
 This project was created with the help of our bootcamp class materials and teamwork. Our team was [Heath](mailto:heathw2444@yahoo.com), [Ivodia](mailto:ivodiainjoh@gmail.com), [Jessica](mailto:deck.jessica@gmail.com), and [Maria](mailto:mariaortegapb@gmail.com)
+
+## Questions
+
+For any questions, you can visit the [GitHub page](https://github.com/deck-jessica/book-club)
