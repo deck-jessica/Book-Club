@@ -25,6 +25,26 @@ Book Club is an app that uses MySql to store users along with a list of books ch
 
 ## Installation
 
+You will need to ensure you have the following dependencies:
+
+
+`
+npm i
+npm install express
+npm install express-handlebars
+npm install mysql
+npm install passport
+npm install sequelize
+`
+## Usage
+
+Once dependencies have been installed, you can run the application in the terminal with:
+
+`
+node server.js
+`
+This will allow you to run it locally, but it can also be used globally via the live link above!
+
 ## Technologies
 
 Tools used:
