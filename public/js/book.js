@@ -23,14 +23,12 @@ $(document).ready(function() {
         .trim()
     });
   }
-
   // A function for adding a book. Calls getBooks upon completion
   function upsertBook(bookData) {
     console.log(bookData),
     $.post("/api/new", bookData)
       .then(getBooks);
   }
-
   // Function for creating a new list row for books
   function createBooksRow(bookData) {
     console.log(bookData)
@@ -52,6 +50,7 @@ $(document).ready(function() {
   function getBooks() {
     $.get("/api/books").then(function(data) {
       console.log("")
+      console.log(data)
       var rowsToAdd = [];
       for (var i = 0; i < data.length; i++) {
         rowsToAdd.push(createBooksRow(data[i]));
@@ -60,7 +59,6 @@ $(document).ready(function() {
       nameInput.val("");
     });
   }
-
   // A function for rendering the list of books to the page
   function renderBookList(rows) {
     console.log(rows)
