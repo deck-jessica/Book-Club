@@ -1,0 +1,68 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: url(../img/book-club.jpeg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+
+  #boo {
+    border: black solid;
+    background-color: rgb(225, 188, 109);
+    color: rgb(10, 7, 7);
+    border-radius: 3px;
+    padding: 0.5em;
+  }
+
+  .wish-it {
+    border: black solid transparent;
+    border-radius: 3px;
+    padding: 0.5em;
+  }
+
+  .container-list {
+    background-color: rgb(103, 175, 243);
+    border: 1px solid black;
+    border-radius: 2px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 2%;
+    display: grid;
+    grid-template-columns: 3fr 1fr 3fr;
+    grid-gap: 15px;
+    justify-content: center;
+    width: 70%;
+    overflow: hidden;
+  }
+
+  .newBook-form {
+    display: grid;
+    background-color: rgb(103, 175, 243);
+    border: 1px solid black;
+    border-radius: 2px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 2%;
+
+  }
+
+  .newBookbtn {
+    background-color:rgb(225, 188, 109);
+    border-radius: 3px;
+    height: 40px;
+    white-space: nowrap;
+
+  }
+
+  .newBookbtn:hover {
+    background-color: salmon;
+  }
+
+.btn-default:hover {
+  background-color: salmon;
+}
