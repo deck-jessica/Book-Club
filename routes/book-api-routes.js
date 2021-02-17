@@ -8,6 +8,7 @@ module.exports = function (app) {
   console.log("Book Data:");
   console.log(req.body);
   db.Book.create({
+    ReaderId: 1,
     title: req.body.name,
     author: req.body.author,
     //author: req.body.author,
