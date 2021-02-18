@@ -1,10 +1,10 @@
 $(document).ready(function() {
   // Getting references to the name input and book container, as well as the table body
-  var nameInput = $("#book-name");
+  var nameInput = $("#bo");
   var bookList = $("tbody");
   var bookContainer = $(".book-container");
   // Adding event listeners to the form to create a new object
-  $(document).on("submit", "#book-form", handleBookFormSubmit);
+  $("form").on("submit", handleBookFormSubmit);
   
   // Getting the initial list of Books
   getBooks();
@@ -13,7 +13,7 @@ $(document).ready(function() {
   function handleBookFormSubmit(event) {
     event.preventDefault();
     // Don't do anything if the name fields hasn't been filled out
-    if (!nameInput.val().trim().trim()) {
+    if (!nameInput.val().trim()) {
       return;
     }
     // Calling the upsertBook function and passing in the value of the name input
