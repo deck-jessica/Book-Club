@@ -1,9 +1,9 @@
 <li>
-	{{title}}
-
-	<button class="change-haveRead" data-id="{{id}}" data-newRead="{{read}}">
+	{{dataValues.title}}
+    {{dataValues.author}}
+	{{!-- <button class="change-haveRead" data-id="{{dataValues.id}}" data-newRead="{{dataValues.read}}">
 		{{#if read}}Read Book!{{else}}Reread!{{/if}}
-	</button>
+	</button> --}}
 
-	<button class="delete-book" data-id="{{this.id}}">DELETE!</button>
+	<button class="delete-book" data-id="{{dataValues.id}}">DELETE!</button>
 </li>

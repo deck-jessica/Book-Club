@@ -40,9 +40,11 @@
 <ul>
   {{#each books}}
     {{#unless haveRead}}
-    <p class="wish-it">
+    {{!-- <p class="wish-it">
+      {{this.title}}
       <button id="read-book" class="read-book" data-id="{{this.id}}">I've Read It!</button>
-      </p>
+      </p> --}}
+      {{> books/book-block haveRead=true}}
     {{/unless}}
   {{/each}}
 </ul>

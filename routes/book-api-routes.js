@@ -22,6 +22,7 @@ module.exports = function (app) {
   app.get("/api/books", function (req, res) {
     db.Book.findAll({}).then(function (dbBook) {
       res.json(dbBook);
+      console.log(dbBook);
     });
   });
 
